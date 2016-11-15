@@ -7,7 +7,8 @@ const baseOpts = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
-    credentials: 'include'
+    // credentials: 'include',
+    mode: "cors",
 }
 
 const isObj = (obj) => {
@@ -52,6 +53,7 @@ const fetchApi = (cfg) => {
         delete opts.body;
     }
 
+    fetchUrl = 'https://cnodejs.org' + fetchUrl;
 
     return new Promise((resolve, reject) => {
         fetch(fetchUrl, opts).then((res) => {
